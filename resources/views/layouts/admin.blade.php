@@ -4,17 +4,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AdminLTE 3 | Starter</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-  
+    @yield('style')
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{asset('admin')}}/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('admin')}}/css/adminlte.min.css">
+   
   </head>
   <body class="sidebar-mini sidebar-closed sidebar-collapse" style="height: auto;">
   <div class="wrapper">
   
+
+    
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
       <!-- Left navbar links -->
@@ -238,6 +241,14 @@
                 </p>
               </a>
             </li>
+            <li class="nav-item mt-auto">
+              <a href="{{route('post.index')}}" class="nav-link">
+                <i class="nav-icon fas fa-file-alt"></i>
+                <p>
+                  Posts
+                </p>
+              </a>
+            </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -280,9 +291,10 @@
   <script src="{{asset('admin')}}/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
   <script src="{{asset('admin')}}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="{{asset('admin')}}/js/bs-custom-file-input.min.js"></script>
   <!-- AdminLTE App -->
-  <script src="{{asset('admin')}}/js/adminlte.min.js"></script>
   
+  <script src="{{asset('admin')}}/js/adminlte.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   
   <script>
@@ -290,8 +302,15 @@
       toastr.success("{{Session::get('success')}}");
     }
     @endif
+    </script>
+  
+  <script>
+    $(document).ready(function () {
+      bsCustomFileInput.init()
+    });
   </script>
   
+  @yield('script')
   
   </body>
   </html>

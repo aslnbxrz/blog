@@ -61,7 +61,7 @@ class TagController extends Controller
      */
     public function show(Tag $tag)
     {
-        //
+        return view("admin.tag.show", compact("tag"));
     }
 
     /**
@@ -107,7 +107,7 @@ class TagController extends Controller
     {
         if ($tag) {
             $tag->delete();
-            
+
             Session::flash("success", "Tag deleted successfuly");
             return redirect()->route("tag.index");
         }
