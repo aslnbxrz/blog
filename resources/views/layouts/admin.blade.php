@@ -2,7 +2,7 @@
 <html lang="en" style="height: auto;"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Starter</title>
+    <title>Aslnbxrz blog | Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     @yield('style')
     <!-- Google Font: Source Sans Pro -->
@@ -26,7 +26,7 @@
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
-          <a href="index3.html" class="nav-link">Home</a>
+          <a href="dashboard" class="nav-link">Home</a>
         </li>
         <li class="nav-item d-none d-sm-inline-block">
           <a href="#" class="nav-link">Contact</a>
@@ -193,7 +193,7 @@
           <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
                  with font-awesome or any other icon font library -->
-            <li class="nav-item menu-open">
+            {{-- <li class="nav-item menu-open">
               <a href="#" class="nav-link active">
                 <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
@@ -215,13 +215,12 @@
                   </a>
                 </li>
               </ul>
-            </li>
+            </li> --}}
             <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
+              <a href="#" class="nav-link active">
+                <i class="nav-icon fas fa-tachometer-alt"></i>
                 <p>
-                  Simple Link
-                  <span class="right badge badge-danger">New</span>
+                  Dashboard
                 </p>
               </a>
             </li>
@@ -246,6 +245,23 @@
                 <i class="nav-icon fas fa-file-alt"></i>
                 <p>
                   Posts
+                </p>
+              </a>
+            </li>
+            <li class="nav-item mt-auto">
+              <a href="{{route('user.index')}}" class="nav-link">
+                <i class="nav-icon fas fa-user"></i>
+                <p>
+                  Users
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{route('website')}}" target="_blank" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                  View Website
+                  {{-- <span class="right badge badge-danger">New</span> --}}
                 </p>
               </a>
             </li>
