@@ -3,6 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AdminLTE 3 | Starter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
   
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&amp;display=fallback">
@@ -221,6 +222,14 @@
                 </p>
               </a>
             </li>
+            <li class="nav-item mt-auto">
+              <a href="{{route('category.index')}}" class="nav-link">
+                <i class="nav-icon fas fa-tags"></i>
+                <p>
+                  Categories
+                </p>
+              </a>
+            </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
@@ -253,7 +262,8 @@
       <!-- Default to the left -->
       <strong>Copyright © 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
     </footer>
-  <div id="sidebar-overlay"></div></div>
+    <div id="sidebar-overlay"></div>
+  </div>
   <!-- ./wrapper -->
   
   <!-- REQUIRED SCRIPTS -->
@@ -265,5 +275,15 @@
   <!-- AdminLTE App -->
   <script src="{{asset('admin')}}/js/adminlte.min.js"></script>
   
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
   
-  </body></html>
+  <script>
+    @if (Session::has("success")) {
+      toastr.success("{{Session::get('success')}}");
+    }
+    @endif
+  </script>
+  
+  
+  </body>
+  </html>
