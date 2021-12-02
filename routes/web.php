@@ -32,4 +32,5 @@ Route::group(["prefix" => "admin", "middleware" => ["auth"]], function () {
         return view("admin.dashboard.index");
     });
     Route::resource("category", "App\Http\Controllers\CategoryController");
+    Route::resource("tag", "App\Http\Controllers\TagController");
 });

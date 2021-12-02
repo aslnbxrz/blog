@@ -230,6 +230,14 @@
                 </p>
               </a>
             </li>
+            <li class="nav-item mt-auto">
+              <a href="{{route('tag.index')}}" class="nav-link">
+                <i class="nav-icon fas fa-tag"></i>
+                <p>
+                  Tags
+                </p>
+              </a>
+            </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
